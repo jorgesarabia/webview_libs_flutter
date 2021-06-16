@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_libs_flutter/pages/webview_flutter_page.dart';
+import 'package:webview_libs_flutter/widgets/common_button.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,15 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) {
-                    return WebViewFlutterPage(url: _url);
-                  }),
-                );
-              },
-              child: Text('webview_flutter'),
+            CommonButton(
+              page: WebViewFlutterPage(url: _url),
+              label: 'webview_flutter',
             ),
           ],
         ),
